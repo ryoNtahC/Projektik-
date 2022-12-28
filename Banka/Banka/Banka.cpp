@@ -4,6 +4,7 @@
 #include <fstream>
 using namespace std;
 
+int zostatok;
 
 void main()
 {
@@ -35,7 +36,7 @@ void main()
             srand(time(NULL));
             int id[8] = {};
             string meno;
-            int zostatok = 200;
+            
             int pin;
 
 
@@ -43,6 +44,9 @@ void main()
             cin >> meno;
             cout << "Zadaj svoj PIN(4-ciferne cislo nezacinajuce sa nulou): ";
             cin >> pin;
+            cout << "Zadaj svoj pociatocny zostatok: ";
+            cin >> zostatok;
+            cout << endl;
             ofstream MojaFile(meno + ".txt");
             for (int i = 0; i < 8; i++)
                 id[i] = 1 + (rand() % 8) + 1;
@@ -63,7 +67,8 @@ void main()
         else if (volba_zaciatok == 2)
         {
             system("CLS");
-            cout << "pozriet zostatok" << endl;
+            cout << "´Kolko penazi vlozit: " << endl;
+
             cout << endl;
             
 
