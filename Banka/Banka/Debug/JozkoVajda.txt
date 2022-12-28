@@ -1,0 +1,4 @@
+Meno: JozkoVajda
+Id: 36652273
+Zostatok: 200€
+PIN: 1124

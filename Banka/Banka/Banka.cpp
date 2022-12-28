@@ -124,7 +124,7 @@ void main()
         else if (volba_zaciatok == 7)
         {
             system("CLS");
-            cout << "Vytvorili: Matš Budos, Timotej Dolnik a Stanislav Chabrecek";
+            cout << "Vytvorili: Matus Budos, Timotej Dolnik a Stanislav Chabrecek";
             cout << endl;
             break;
 
