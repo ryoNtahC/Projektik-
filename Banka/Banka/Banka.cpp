@@ -5,8 +5,7 @@
 using namespace std;
 
 int zostatok;
-
-void main()
+int main()
 {
     string main_menu[8] = { "1.Vytvorit ucet","2.Pozriet zostatok", "3.Vlozit peniaze ", "4.Vybrat peniaze", "5.Vymazat ucet", "6.Ukazat vsetky ucty","7.Quit" };
     int volba_zaciatok;
@@ -24,15 +23,14 @@ void main()
 
         }
 
-        cout << "Vyber si moznos: " << endl;
+        cout << "Vyber si moznost: " << endl;
         cin >> volba_zaciatok;
 
         if (volba_zaciatok == 1)
         {
             system("CLS");
             
-            ofstream ZoznamUctov("ZoznamUctov.txt");
-            ZoznamUctov << "Meno                      " << "Id                      " << "Pin                      " << "Zostatok" << endl;
+            ofstream ZoznamUctov("ZoznamUctov.txt", ios_base::app);
             srand(time(NULL));
             int id[8] = {};
             string meno;
@@ -53,12 +51,9 @@ void main()
             for (int j = 0; j < 8; j++) {
                 cout << id[j];
             }
-            ZoznamUctov.open("ZoznamUctov.txt");
-            ZoznamUctov << meno << "                      " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                      " << pin << "                      " << zostatok << endl;
-            ZoznamUctov.close();
             cout << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "PIN:" << pin;
-            MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "€" << endl << "PIN: " << pin << endl;
-            
+            MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "ï¿½" << endl << "PIN: " << pin << endl;
+            ZoznamUctov << meno <<"                    "<< id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                     " << pin << "                    " << endl;
 
 
 
@@ -67,7 +62,7 @@ void main()
         else if (volba_zaciatok == 2)
         {
             system("CLS");
-            cout << "´Kolko penazi vlozit: " << endl;
+            cout << "Kolko penazi chces vlozit: " << endl;
 
             cout << endl;
             
@@ -103,7 +98,7 @@ void main()
         else if (volba_zaciatok == 6)
         {
             system("CLS");
-            cout << "Zadaj adminské heslo: ";
+            cout << "Zadaj adminske heslo: ";
             cin >> admin_kontrola;
             cout << endl;
             
@@ -132,6 +127,7 @@ void main()
             cout << "Vytvorili: Matus Budos, Timotej Dolnik a Stanislav Chabrecek";
             cout << endl;
             break;
+            return 0;
 
         }
     }
