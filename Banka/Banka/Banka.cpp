@@ -5,6 +5,21 @@
 using namespace std;
 
 int zostatok;
+void napis()
+{
+    cout << "    I                                                             I             " << endl;
+    cout << "  aaaaa       aaaaaa    aaaaaa   a     a  a   a   aaaaaa        aaaaa           " << endl;
+    cout << " a  I  a      a     a  a      a  aa    a  a  a   a      a      a  I  a          " << endl;
+    cout << " a  I         a     a  a      a  a a   a  a a    a      a      a  I             " << endl;
+    cout << "  aaaaa       aaaaaa   aaaaaaaa  a  a  a  aa     aaaaaaaa       aaaaa           " << endl;
+    cout << "    I  a      a     a  a      a  a   a a  a a    a      a         I  a          " << endl;
+    cout << " a  I  a      a     a  a      a  a    aa  a  a   a      a      a  I  a          " << endl;
+    cout << "  aaaaa       aaaaaa   a      a  a     a  a   a  a      a       aaaaa           " << endl;
+    cout << "    I                                                             I             " << endl;
+    cout << endl;
+    cout << endl;
+}
+
 
 void main()
 {
@@ -18,6 +33,7 @@ void main()
     {
         for (int i = 0; i < 7; i++)
         {
+            void napis();
             cout << main_menu[i] << endl;
 
 
@@ -30,7 +46,8 @@ void main()
         if (volba_zaciatok == 1)
         {
             system("CLS");
-            
+            void napis();
+
             ofstream ZoznamUctov("ZoznamUctov.txt");
             ZoznamUctov << "Meno                      " << "Id                      " << "Pin                      " << "Zostatok" << endl;
             srand(time(NULL));
@@ -67,6 +84,7 @@ void main()
         else if (volba_zaciatok == 2)
         {
             system("CLS");
+            void napis();
             cout << "´Kolko penazi vlozit: " << endl;
 
             cout << endl;
@@ -76,6 +94,7 @@ void main()
         else if (volba_zaciatok == 3)
         {
             system("CLS");
+            void napis();
             cout << "vlozit peniaze" << endl;
             cout << endl;
             
@@ -85,6 +104,7 @@ void main()
         else if (volba_zaciatok == 4)
         {
             system("CLS");
+            void napis();
             cout << "vybrat peniaze" << endl;
             cout << endl;
             
@@ -94,6 +114,7 @@ void main()
         else if (volba_zaciatok == 5)
         {
             system("CLS");
+            void napis();
             cout << "vymazat ucet" << endl;
             cout << endl;
 
@@ -103,6 +124,7 @@ void main()
         else if (volba_zaciatok == 6)
         {
             system("CLS");
+            void napis();
             cout << "Zadaj adminské heslo: ";
             cin >> admin_kontrola;
             cout << endl;
@@ -129,6 +151,7 @@ void main()
         else if (volba_zaciatok == 7)
         {
             system("CLS");
+            void napis();
             cout << "Vytvorili: Matus Budos, Timotej Dolnik a Stanislav Chabrecek";
             cout << endl;
             break;
