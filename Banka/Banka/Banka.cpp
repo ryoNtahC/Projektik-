@@ -30,9 +30,30 @@ void main()
         {
             system("CLS");
             
-            cout << "Zadaj svoje meno: ";
+            ofstream ZoznamUctov("ZoznamUctov.txt");
+            ZoznamUctov << "Meno                      " << "Id                      " << "Pin                      " << "Zostatok" << endl;
+            srand(time(NULL));
+            int id[8] = {};
+            string meno;
+            int zostatok = 200;
+            int pin;
+
+
+            cout << "Zadaj svoje meno(Spolu a bez medzier): ";
             cin >> meno;
-            cout << endl;
+            cout << "Zadaj svoj PIN(4-ciferne cislo nezacinajuce sa nulou): ";
+            cin >> pin;
+            ofstream MojaFile(meno + ".txt");
+            for (int i = 0; i < 8; i++)
+                id[i] = 1 + (rand() % 8) + 1;
+            for (int j = 0; j < 8; j++) {
+                cout << id[j];
+            }
+            ZoznamUctov.open("ZoznamUctov.txt");
+            ZoznamUctov << meno << "                      " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                      " << pin << "                      " << zostatok << endl;
+            ZoznamUctov.close();
+            cout << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "PIN:" << pin;
+            MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "€" << endl << "PIN: " << pin << endl;
             
 
 
