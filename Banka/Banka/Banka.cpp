@@ -5,6 +5,22 @@
 using namespace std;
 
 int zostatok;
+int napis()
+{
+    cout << "    I                                                             I             " << endl;
+    cout << "  aaaaa       aaaaaa    aaaaaa   a     a  a   a   aaaaaa        aaaaa           " << endl;
+    cout << " a  I  a      a     a  a      a  aa    a  a  a   a      a      a  I  a          " << endl;
+    cout << " a  I         a     a  a      a  a a   a  a a    a      a      a  I             " << endl;
+    cout << "  aaaaa       aaaaaa   aaaaaaaa  a  a  a  aa     aaaaaaaa       aaaaa           " << endl;
+    cout << "    I  a      a     a  a      a  a   a a  a a    a      a         I  a          " << endl;
+    cout << " a  I  a      a     a  a      a  a    aa  a  a   a      a      a  I  a          " << endl;
+    cout << "  aaaaa       aaaaaa   a      a  a     a  a   a  a      a       aaaaa           " << endl;
+    cout << "    I                                                             I             " << endl;
+    cout << endl;
+    cout << endl;
+    return 0;
+}
+
 int main()
 {
     string main_menu[8] = { "1.Vytvorit ucet","2.Pozriet zostatok", "3.Vlozit peniaze ", "4.Vybrat peniaze", "5.Vymazat ucet", "6.Ukazat vsetky ucty","7.Quit" };
