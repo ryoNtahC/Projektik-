@@ -5,7 +5,9 @@
 using namespace std;
 
 int zostatok;
+char zoznam_uctov;
 int napis()
+
 {
     cout << "    I                                                             I             " << endl;
     cout << "  aaaaa       aaaaaa    aaaaaa   a     a  a   a   aaaaaa        aaaaa           " << endl;
@@ -59,8 +61,20 @@ int main()
             cin >> meno;
             cout << "Zadaj svoj PIN(4-ciferne cislo nezacinajuce sa nulou): ";
             cin >> pin;
+            if(pin < 1000){
+                cout << "Zadaj prosim PIN nezacinajuci sa nulou. Dakujem :)";
+                cin >> pin;
+            }
+            else if(pin > 9999){
+                cout << "Zadaj prosim stvorciferny PIN. Dakujem :)";
+                cin >> pin;
+            }
             cout << "Zadaj svoj pociatocny zostatok: ";
             cin >> zostatok;
+            if(zostatok <= 0){
+                cout << "Nemozes zalozit ucet bez zakladneho vkladu a nemozes vlozit zapornu sumu penazi, zadaj realnu sumu.";
+                cin >> zostatok;
+            }
             cout << endl;
             ofstream MojaFile(meno + ".txt");
             for (int i = 0; i < 8; i++)
@@ -71,6 +85,7 @@ int main()
             cout << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "PIN:" << pin;
             MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "�" << endl << "PIN: " << pin << endl;
             ZoznamUctov << meno <<"                    "<< id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                     " << pin << "                    " << endl;
+            
 
 
 
