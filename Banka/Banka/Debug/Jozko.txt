@@ -1,0 +1,5 @@
+Meno: Jozko
+Id: 55755985
+Zostatok: 7000€
+PIN: 7000
+
