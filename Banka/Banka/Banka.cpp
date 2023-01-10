@@ -7,24 +7,25 @@ using namespace std;
 int zostatok;
 char zoznam_uctov;
 
+
 int napis()
 
 {
-    cout << "    I                                                             I             " << endl;
-    cout << "  aaaaa       aaaaaa    aaaaaa   a     a  a   a   aaaaaa        aaaaa           " << endl;
-    cout << " a  I  a      a     a  a      a  aa    a  a  a   a      a      a  I  a          " << endl;
-    cout << " a  I         a     a  a      a  a a   a  a a    a      a      a  I             " << endl;
-    cout << "  aaaaa       aaaaaa   aaaaaaaa  a  a  a  aa     aaaaaaaa       aaaaa           " << endl;
-    cout << "    I  a      a     a  a      a  a   a a  a a    a      a         I  a          " << endl;
-    cout << " a  I  a      a     a  a      a  a    aa  a  a   a      a      a  I  a          " << endl;
-    cout << "  aaaaa       aaaaaa   a      a  a     a  a   a  a      a       aaaaa           " << endl;
-    cout << "    I                                                             I             " << endl;
+    cout  << "   I                                                             I   " << endl;
+    cout  << " aaaaa       aaaaaa    aaaaaa   a     a  a   a   aaaaaa        aaaaa " << endl;
+    cout  << "a  I  a      a     a  a      a  aa    a  a  a   a      a      a  I  a" << endl;
+    cout  << "a  I         a     a  a      a  a a   a  a a    a      a      a  I   " << endl;
+    cout  << " aaaaa       aaaaaa   aaaaaaaa  a  a  a  aa     aaaaaaaa       aaaaa " << endl;
+    cout  << "   I  a      a     a  a      a  a   a a  a a    a      a         I  a" << endl;
+    cout  << "a  I  a      a     a  a      a  a    aa  a  a   a      a      a  I  a" << endl;
+    cout  << " aaaaa       aaaaaa   a      a  a     a  a   a  a      a       aaaaa " << endl;
+    cout  << "   I                                                             I   " << endl;
     cout << endl;
     cout << endl;
     return 0;
 }
 
-void main()
+int main()
 {
     string main_menu[3] = { "1.Vytvorit ucet", "2.Ukazat vsetky ucty","3.Quit" };
     int volba_zaciatok;
@@ -37,11 +38,12 @@ void main()
         napis();
         for (int i = 0; i < 3; i++)
         {
-            cout << main_menu[i] << endl;
+            cout << "                                     " << main_menu[i] << endl;
 
         }
 
-        cout << "Vyber si moznost: " << endl;
+        cout <<"                                     " << "Vyber si moznost: "<< endl;
+        cout << "                                     ";
         cin >> volba_zaciatok;
 
         if (volba_zaciatok == 1)
@@ -53,14 +55,12 @@ void main()
 
 
             ofstream ZoznamUctov("ZoznamUctov.txt", ios_base::app);
-            ZoznamUctov << "Meno                      " << "Id                      " << "Pin                      " << "Zostatok" << endl;
             srand(time(NULL));
             int id[8] = {};
             string meno;
 
 
             int pin;
-
 
             cout << "Zadaj svoje meno(Spolu a bez medzier): ";
             cin >> meno;
@@ -151,7 +151,7 @@ void main()
                 if (volba_c1 == 3)
                 {
                     system("CLS");
-                    ZoznamUctov.open("ZoznamUctov.txt");
+                    ZoznamUctov.open("ZoznamUctov.txt", ios::app);
                     ZoznamUctov << meno << "                      " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                      " << pin << "                      " << zostatok << endl;
                     ZoznamUctov.close();
                     break;
@@ -175,9 +175,60 @@ void main()
 
             if (admin_kontrola == admin)
             {
-                cout << "heslo je spravne" << endl;
-                cout << "prehlad vsetkych uctov" << endl;
+                system("CLS");
+                napis();
+
+                ifstream ZoznamUctov1("ZoznamUctov.txt");
+
+                string myText;
+
+                   
+
+
+
+                int zasa_volba;
+                string choice[1] = { "1.Back", };
+                cout << "heslo je spravne" << endl << endl;
+                while (getline(ZoznamUctov1, myText)) {
+
+                    cout << myText << endl;
+
+                }
+
+                for (int i = 0; i < 1; i++)
+                {
+                    cout << choice[i] << endl;
+
+
+                }
+
+                cout << "Vyber si moznost: " << endl;
+                cin >> zasa_volba;
+
+
+                if (zasa_volba = 1)
+                {
+                    system("CLS");
+                    napis();
+                    system("CLS");
+                    continue;
+                    
+
+                }
+
+        
+
+                else
+                {
+                    cout << "zadal si neplatnu moznost" << endl;
+                    cin >> zasa_volba;
+
+
+                }
+
+
                 cout << endl;
+                
 
 
 

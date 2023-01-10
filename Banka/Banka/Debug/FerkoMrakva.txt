@@ -1,0 +1,10 @@
+Meno: FerkoMrakva
+Id: 74847533
+Zostatok: 9000€
+PIN: 9876
+
+Meno: FerkoMrakva
+Id: 74847533
+Zostatok: 5544€
+PIN: 9876
+

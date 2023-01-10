@@ -1,0 +1,10 @@
+Meno: Mario
+Id: 86927469
+Zostatok: 4000000€
+PIN: 2222
+
+Meno: Mario
+Id: 86927469
+Zostatok: 3999900€
+PIN: 2222
+

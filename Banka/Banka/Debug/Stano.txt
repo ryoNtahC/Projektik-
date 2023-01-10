@@ -1,0 +1,10 @@
+Meno: Stano
+Id: 65574765
+Zostatok: 900€
+PIN: 5678
+
+Meno: Stano
+Id: 65574765
+Zostatok: 500€
+PIN: 5678
+

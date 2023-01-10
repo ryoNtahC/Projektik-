@@ -1,5 +1,5 @@
-Meno: Jozko
-Id: 55755985
-Zostatok: 7000€
-PIN: 7000
+Meno: JOzko
+Id: 68794684
+Zostatok: 76576587€
+PIN: 5464
 

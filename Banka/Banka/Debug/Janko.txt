@@ -1,0 +1,9 @@
+Meno: Janko
+Id: 64534334
+Zostatok: 900€
+PIN: 7544
+
+Meno: Janko
+Id: 64534334
+Zostatok: 1800€
+PIN: 7544
