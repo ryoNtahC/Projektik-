@@ -1,15 +1,15 @@
-#include <iostream>
+#include <iostream>    //Importovanie kniznic
 #include <string>
 #include <stdlib.h>
 #include <fstream>
 #include <Windows.h>
-using namespace std;
+using namespace std;   //Zadefinovanie priestoru std
 
-int zostatok;
+int zostatok;       //Definovanie globálnych premennych
 char zoznam_uctov;
 
 
-int napis()
+int napis()  //Funkcia na vypis loga banky
 
 {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -28,19 +28,19 @@ int napis()
     return 0;
 }
 
-int main()
+int main()  //Hlavna funkcia
 {
  
-    string main_menu[3] = { "1.Vytvorit ucet", "2.Ukazat vsetky ucty","3.Quit" };
-    int volba_zaciatok;
+    string main_menu[3] = { "1.Vytvorit ucet", "2.Ukazat vsetky ucty","3.Quit" };  //Pole s main menu
+    int volba_zaciatok;  //Premenne
     string meno;
     string admin = "Jozko";
     string admin_kontrola;
 
-    while (true)
+    while (true) //Nekonecny while cyklus pre moznost opakovanej volby v menu
     {
-        napis();
-        for (int i = 0; i < 3; i++)
+        napis();  //Zavolanie funkcie napis
+        for (int i = 0; i < 3; i++) //For cyklus pre vypis main menu
         {
             HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
             SetConsoleTextAttribute(h, 7);
@@ -54,17 +54,17 @@ int main()
         cout << "                        ";
         cin >> volba_zaciatok;
 
-        if (volba_zaciatok == 1)
+        if (volba_zaciatok == 1)  //Cast kodu, ktora sa vykona ak si uzivatel vyberie moznost 1
         {
             HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
             SetConsoleTextAttribute(h, 7);
-            system("CLS");
+            system("CLS"); //Vymzanie okna
             napis();
             int volba_c1;
 
 
 
-            ofstream ZoznamUctov("ZoznamUctov.txt", ios_base::app);
+            ofstream ZoznamUctov("ZoznamUctov.txt", ios_base::app); //Zapis do zoznamu uctov
             srand(time(NULL));
             int id[8] = {};
             string meno;
@@ -75,14 +75,14 @@ int main()
             
             SetConsoleTextAttribute(h, 7);
 
-            cout << "                        " << "Zadaj svoje meno(Spolu a bez medzier): ";
+            cout << "                        " << "Zadaj svoje meno(Spolu a bez medzier): ";  //Zadavanie mena a PINu
             cin >> meno;
-            cout << "                        " << "Zadaj svoj PIN(4-ciferne cislo nezacinajuce sa nulou): ";
+            cout << "                        " << "Zadaj svoj PIN(4-ciferne cislo nezacinajuce sa nulou): "; //Overenie zadaneho PINu
             cin >> pin;
             if (pin < 1000) {
                 
                 SetConsoleTextAttribute(h, 7);
-                cout << "                        " << "Zadaj prosim PIN nezacinajuci sa nulou. Dakujem :)" << endl;
+                cout << "                        " << "Zadaj prosim PIN nezacinajuci sa nulou. Dakujem :)" << endl;  
                 cout << "                        ";
                 cin >> pin;
                 
@@ -93,34 +93,34 @@ int main()
                 cout << "                        " << "Zadaj prosim stvorciferny PIN. Dakujem :)";
                 cin >> pin;
             }
-            cout << "                        " << "Zadaj svoj pociatocny zostatok: ";
+            cout << "                        " << "Zadaj svoj pociatocny zostatok: "; //Zadavanie pociatocneho zostatku
             cin >> zostatok;
             if (zostatok <= 0) {
                 
                 SetConsoleTextAttribute(h, 7);
-                cout << "                        " << "Nemozes zalozit ucet bez zakladneho vkladu a nemozes vlozit zapornu sumu penazi, zadaj realnu sumu.";
+                cout << "                        " << "Nemozes zalozit ucet bez zakladneho vkladu a nemozes vlozit zapornu sumu penazi, zadaj realnu sumu."; //Kontrola pociatocneho zostatku
                 cin >> zostatok;
             }
             cout << endl;
-            ofstream MojaFile(meno + ".txt");
+            ofstream MojaFile(meno + ".txt"); //Vytvorenie suboru daneho uctu a zapisovanie udajov don
             for (int i = 0; i < 8; i++)
-                id[i] = 1 + (rand() % 8) + 1;
+                id[i] = 1 + (rand() % 8) + 1; //Generovanie ID 
             for (int j = 0; j < 8; j++) {
                 SetConsoleTextAttribute(h, 7);
                 cout << id[j];
             }
-            ZoznamUctov.open("ZoznamUctov.txt");
+            ZoznamUctov.open("ZoznamUctov.txt"); //Zapisovanie do zoznamu vsetkych uctov
             ZoznamUctov << meno << "                      " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                      " << pin << "                      " << zostatok << endl;
             ZoznamUctov.close();
             cout << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "PIN:" << pin;
             MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "€" << endl << "PIN: " << pin << endl << endl;
 
-            string menu_c2[3] = { "1.Vlozit peniaze", "2.Vybrat peniaze", "3.Back" };
+            string menu_c2[3] = { "1.Vlozit peniaze", "2.Vybrat peniaze", "3.Back" }; //Menu po vytvoreni uctu, s moznostou vkladu, ci vyberu hotovosti
             cout << endl;
             system("CLS");
             napis();
 
-            while (true)
+            while (true) // Nekonecny while cyklus pre menu po vytvoreni uctu
             {
                 SetConsoleTextAttribute(h, 7);
                 for (int i = 0; i < 3; i++)
@@ -134,7 +134,7 @@ int main()
                 cout << "                        ";
                 cin >> volba_c1;
 
-                if (volba_c1 == 1)
+                if (volba_c1 == 1)  //Cast kodu, ktora sa vykona,ak si uzivatel zvoli moznost cislo 1
                 {
                     system("CLS");
                     napis();
@@ -152,7 +152,7 @@ int main()
 
                 }
 
-                if (volba_c1 == 2)
+                if (volba_c1 == 2) //Cast kodu, ktora sa vykona, ak si uzivatel zvoli moznost cislo 2
                 {
 
                     system("CLS");
@@ -163,7 +163,7 @@ int main()
                     cout << "                        ";
                     cin >> zadaj;
 
-                    if (zostatok < zadaj)
+                    if (zostatok < zadaj) //Kontrola, ci ma uzivatel na ucte dost penazi
                     {
                         SetConsoleTextAttribute(h, 7);
                         cout << endl;
@@ -173,7 +173,7 @@ int main()
                     else
                     {
                         SetConsoleTextAttribute(h, 7);
-                        zostatok = zostatok - zadaj;
+                        zostatok = zostatok - zadaj; //Prepis aktualneho zostatku po odcitani vyberu
                         MojaFile << "Meno: " << meno << endl << "Id: " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << endl << "Zostatok: " << zostatok << "€" << endl << "PIN: " << pin << endl << endl;
                         cout << endl;
                         cout << "                        " << zostatok << endl ;
@@ -185,11 +185,11 @@ int main()
 
                 }
 
-                if (volba_c1 == 3)
+                if (volba_c1 == 3) //Navrat do main menu, po zvoleni moznosti cislo 3
                 {
                     SetConsoleTextAttribute(h, 7);
                     system("CLS");
-                    ZoznamUctov.open("ZoznamUctov.txt", ios::app);
+                    ZoznamUctov.open("ZoznamUctov.txt", ios::app); //Otvorenie suboru ZoznamUctov.txt a zadefinovanie aby sa subor neprepisoval ale aby sa don dopisovalo
                     ZoznamUctov << meno << "                    " << id[0] << id[1] << id[2] << id[3] << id[4] << id[5] << id[6] << id[7] << "                      " << pin << "                      " << zostatok << endl;
                     ZoznamUctov.close();
                     break;
@@ -203,7 +203,7 @@ int main()
 
         }
 
-        else if (volba_zaciatok == 2)
+        else if (volba_zaciatok == 2) //Moznost, urcena pre adminov banky, po ktorej sa vypise zoznam vsetkych uctov
         {
            
             system("CLS");
@@ -214,7 +214,7 @@ int main()
             cin >> admin_kontrola;
             cout << endl;
 
-            if (admin_kontrola == admin)
+            if (admin_kontrola == admin) //Kontrola, ci sa zadane heslo rovna nastavenemu heslu
             {
                 
                 system("CLS");
@@ -223,13 +223,12 @@ int main()
                 ifstream ZoznamUctov1("ZoznamUctov.txt");
 
                 string myText;
-
                    
 
 
 
                 int zasa_volba;
-                string choice[1] = { "Pre navrat do menu zmackni 1: ", };
+                string choice[1] = { "Pre navrat do menu zmackni 1: ", };  //Moznost vratenia sa do main menu
                 SetConsoleTextAttribute(h, 10);
                 cout << "                        " << "heslo je spravne" << endl << endl;
                 while (getline(ZoznamUctov1, myText)) {
@@ -266,7 +265,7 @@ int main()
 
                 else
                 {
-                    SetConsoleTextAttribute(h, 7);
+                    SetConsoleTextAttribute(h, 7); //Else v pripade, ze by uzivatel zadal moznost, ktora neexistuje
                     cout << "                        " << "zadal si neplatnu moznost" << endl;
                     break;
 
@@ -281,7 +280,7 @@ int main()
 
 
             }
-            else
+            else //Else pre pripad, ze si uzivatel zvoli moznost 2, avsak zada nespravne heslo
             {
                 system("CLS");
                 SetConsoleTextAttribute(h, 4);
@@ -297,13 +296,13 @@ int main()
 
 
         }
-        else if (volba_zaciatok == 3)
+        else if (volba_zaciatok == 3) //Ak si utivatel zvoli v main menu moznost 3, program vypise mena tvorcov a ukonci sa
         {
         
             system("CLS");
             napis();
             SetConsoleTextAttribute(h, 3);
-            cout << "                        " << "Vytvorili: Matus Budos, Timotej Dolnik a Stanislav Chabrecek";
+            cout << "                        " << "Vytvorili: Matus Budos, Timotej Dolnik a Stanislav Chabrecek"; //Vypis mien tvorcov tohto programu
             cout << endl;
             SetConsoleTextAttribute(h, 7);
             break;
