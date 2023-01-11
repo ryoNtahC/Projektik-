@@ -1,5 +1,0 @@
-Meno: KAler
-Id: 46588559
-Zostatok: 600€
-PIN: 9876
-

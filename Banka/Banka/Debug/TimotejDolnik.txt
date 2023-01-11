@@ -1,4 +1,0 @@
-Meno: TimotejDolnik
-Id: 75624868
-Zostatok: 50€
-PIN: 1806

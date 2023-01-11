@@ -1,5 +1,0 @@
-Meno: JOzko
-Id: 68794684
-Zostatok: 76576587€
-PIN: 5464
-

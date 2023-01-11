@@ -1,5 +1,0 @@
-Meno: HAFKF
-Id: 67222753
-Zostatok: 1230€
-PIN: 3456
-
